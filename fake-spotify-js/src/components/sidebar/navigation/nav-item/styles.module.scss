@@ -1,0 +1,22 @@
+@import "src/styles/typography";
+@import "src/styles/colours";
+
+.wrapper {
+  display: flex;
+  margin-bottom: 15px;
+  align-items: center;
+}
+
+.icon {
+  stroke: $elementGrey;
+  fill: $elementGrey;
+  height: 22px;
+  width: 22px;
+}
+
+.text {
+  composes: base-font;
+  padding-left: 12px;
+  font-size: 12px;
+  font-weight: bold;
+}

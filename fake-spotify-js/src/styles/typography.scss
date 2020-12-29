@@ -1,0 +1,19 @@
+@import "src/styles/colours";
+
+.base-font {
+  color: $elementGrey;
+  font-family: proxima-nova, sans-serif;
+  font-style: normal;
+  font-weight: 100;
+  letter-spacing: .3px;
+}
+
+.spaced {
+  composes: base-font;
+  letter-spacing: 2px;
+}
+
+.h1 {
+  composes: base-font;
+  font-size: 20px;
+}

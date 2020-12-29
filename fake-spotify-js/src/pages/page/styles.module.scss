@@ -1,0 +1,39 @@
+@import "src/styles/colours";
+@import "src/styles/sizes";
+@import "src/styles/typography";
+
+.wrapper {
+  composes: h1;
+  color: green;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  max-height: 100vh;
+}
+
+.main {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  flex: 1 100%;
+  background-color: $gradientEnd;
+}
+
+.contentHeader {
+  display: flex;
+  align-items: flex-end;
+  height: 250px;
+  background-image: linear-gradient($gradientStart, $gradientEnd);
+  padding: 0 40px;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.contentBody {
+  padding: 0 40px;
+}
+

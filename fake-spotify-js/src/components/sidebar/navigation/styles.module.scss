@@ -1,0 +1,14 @@
+.wrapper {
+  padding: 30px 26px 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.navItem {
+  margin-bottom: 10px;
+}
+
+.scrollableContent {
+  height: 30vh;
+  overflow: scroll
+}

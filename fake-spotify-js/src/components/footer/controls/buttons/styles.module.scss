@@ -1,0 +1,35 @@
+@import "src/styles/colours";
+
+.wrapper {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+.icon {
+  height: 14px;
+  width: 14px;
+  stroke: $elementGrey;
+  fill: $elementGrey;
+  margin: 0 13px;
+}
+
+.pauseIcon {
+  composes: icon;
+  height: 16px;
+  width: 16px;
+  stroke: $bright;
+  fill: $bright;
+  margin: 0;
+}
+
+.fastForwardIcon {
+  composes: icon;
+  transform: rotate(180deg);
+}
+
+.circleWrapper {
+  height: 30px;
+  width: 30px;
+}

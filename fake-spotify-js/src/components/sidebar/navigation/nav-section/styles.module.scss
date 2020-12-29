@@ -1,0 +1,24 @@
+@import "src/styles/typography";
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  margin-top: 20px;
+}
+
+.text {
+  composes: spaced;
+  font-size: 10px;
+  margin-bottom: 10px;
+}
+
+.itemText {
+  composes: base-font;
+  font-size: 12px;
+  margin-bottom: 18px;
+}
+
+.itemTextBold {
+  composes: itemText;
+  font-weight: bold;
+}

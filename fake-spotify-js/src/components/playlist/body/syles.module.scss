@@ -1,0 +1,38 @@
+@import "src/styles/typography";
+@import "src/styles/colours";
+
+.table {
+  width: 100%;
+  text-align: left;
+  composes: base-font;
+  font-size: 13px;
+  color: $bright;
+}
+
+.icon {
+  height: 18px;
+  width: 18px;
+  stroke: $elementGrey;
+  fill: $elementGrey;
+}
+
+.td {
+  height: 22px;
+  padding: 10px;
+  vertical-align: middle;
+}
+
+.th {
+  composes: td;
+  height: 18px;
+}
+
+.tr {
+  border-bottom: 1px solid $playerGrey;
+  vertical-align: top;
+}
+
+.thead {
+  composes: spaced;
+  font-size: 11px;
+}

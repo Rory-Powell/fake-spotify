@@ -1,0 +1,86 @@
+@import "src/styles/colours";
+@import "src/styles/typography";
+
+.wrapper {
+  display: flex;
+  flex-direction: row;
+  margin-bottom: 15px;
+}
+
+.artwork {
+  height: 200px;
+  width: 200px;
+
+}
+
+.infoWrapper {
+  margin-left: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+}
+
+.controls {
+  margin-top: 21px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.artistWrapper {
+  display: flex;
+  flex-direction: row;
+  margin-bottom: 10px;
+  margin-top: 15px;
+}
+
+.typeText {
+  composes: spaced;
+  font-size: 11px;
+  color: $bright;
+}
+
+.titleText {
+  composes: base-font;
+  font-size: 40px;
+  color: $bright;
+  font-weight: bold;
+  margin-top: 8px;
+}
+
+.subText {
+  composes: base-font;
+  font-size: 13px;
+}
+
+.artistText {
+  composes: subText;
+  color: $bright;
+}
+
+.playButton {
+  margin-right: 15px;
+  border-radius: 50px;
+  width: 95px;
+  height: 28px;
+  composes: base-font;
+  color: $bright;
+  background-color: $elementGreen;
+  font-size: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.icon {
+  stroke: $bright;
+  fill: $bright;
+  height: 16px;
+  width: 16px;
+}
+
+.circleWrapper {
+  height: 28px;
+  width: 28px;
+  margin-right: 15px;
+}

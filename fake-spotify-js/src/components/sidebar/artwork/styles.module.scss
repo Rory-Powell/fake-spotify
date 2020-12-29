@@ -1,0 +1,10 @@
+@import "src/styles/colours";
+@import "src/styles/sizes";
+
+.artwork {
+  width: $navWidth;
+  height: $navWidth;
+  max-width: 100%;
+  margin: 0;
+  padding: 0;
+}

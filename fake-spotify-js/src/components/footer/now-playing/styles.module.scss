@@ -1,0 +1,35 @@
+@import "src/styles/colours";
+@import "src/styles/typography";
+@import "src/styles/sizes";
+
+.wrapper {
+  margin-left: 15px;
+  max-width: $navWidth - 15px;
+  min-width: $navWidth - 15px;
+  width: 100%;
+}
+
+.songInfo {
+  display: flex;
+  align-items: center;
+  margin-bottom: 6px;
+}
+
+.songTitle {
+  max-width: $navWidth - 30px;
+  color: $bright;
+  composes: base-font;
+  font-size: 13px;
+}
+
+.artistTitle {
+  composes: base-font;
+  font-size: 11px;
+}
+
+.icon {
+  stroke: $elementGrey;
+  fill: $elementGrey;
+  height: 16px;
+  margin-left: 10px;
+}

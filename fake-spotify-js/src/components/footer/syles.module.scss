@@ -1,0 +1,10 @@
+@import "src/styles/colours";
+
+.wrapper {
+  height: 80px;
+  background-color: $playerGrey;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}

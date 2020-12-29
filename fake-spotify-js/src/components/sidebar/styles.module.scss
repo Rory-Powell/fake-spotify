@@ -1,0 +1,11 @@
+@import "src/styles/colours";
+@import "src/styles/sizes";
+
+.wrapper {
+  max-width: $navWidth;
+  min-width: $navWidth;
+  background-color: $sidebarBlack;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
