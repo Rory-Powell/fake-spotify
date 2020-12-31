@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require 'test_helper'
 
 class PlaylistsControllerTest < ActionDispatch::IntegrationTest
@@ -5,30 +7,36 @@ class PlaylistsControllerTest < ActionDispatch::IntegrationTest
     @playlist = playlists(:one)
   end
 
-  test "should get index" do
+  test 'should get index' do
     get playlists_url, as: :json
     assert_response :success
   end
 
-  test "should create playlist" do
+  test 'should create playlist' do
     assert_difference('Playlist.count') do
-      post playlists_url, params: { playlist: { title: @playlist.title } }, as: :json
+      post playlists_url, params: {
+        playlist: {
+          title: @playlist.title,
+          description: @playlist.description,
+          user_id: @playlist.user_id
+        }
+      }, as: :json
     end
 
     assert_response 201
   end
 
-  test "should show playlist" do
+  test 'should show playlist' do
     get playlist_url(@playlist), as: :json
     assert_response :success
   end
 
-  test "should update playlist" do
+  test 'should update playlist' do
     patch playlist_url(@playlist), params: { playlist: { title: @playlist.title } }, as: :json
     assert_response 200
   end
 
-  test "should destroy playlist" do
+  test 'should destroy playlist' do
     assert_difference('Playlist.count', -1) do
       delete playlist_url(@playlist), as: :json
     end

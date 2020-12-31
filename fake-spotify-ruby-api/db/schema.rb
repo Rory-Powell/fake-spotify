@@ -32,7 +32,7 @@ ActiveRecord::Schema.define(version: 2020_12_31_095043) do
     t.index ["artist_id"], name: "index_albums_on_artist_id"
   end
 
-  create_table "artist_song", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4", force: :cascade do |t|
+  create_table "artist_songs", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4", force: :cascade do |t|
     t.bigint "song_id", null: false
     t.bigint "artist_id", null: false
     t.datetime "created_at", precision: 6, null: false
@@ -84,8 +84,8 @@ ActiveRecord::Schema.define(version: 2020_12_31_095043) do
   add_foreign_key "album_songs", "albums"
   add_foreign_key "album_songs", "songs"
   add_foreign_key "albums", "artists"
-  add_foreign_key "artist_song", "artists"
-  add_foreign_key "artist_song", "songs"
+  add_foreign_key "artist_songs", "artists"
+  add_foreign_key "artist_songs", "songs"
   add_foreign_key "playlist_songs", "playlists"
   add_foreign_key "playlist_songs", "songs"
   add_foreign_key "playlists", "users"
