@@ -1,5 +1,5 @@
 class PlaylistsController < ApplicationController
-  before_action :set_playlist, only: [:show, :update, :destroy]
+  before_action :set_playlist, only: [:show, :update, :destroy, :show_songs]
 
   # GET /playlists
   def index
@@ -11,6 +11,11 @@ class PlaylistsController < ApplicationController
   # GET /playlists/1
   def show
     render json: @playlist
+  end
+
+  # GET /playlists/1/songs
+  def show_songs
+    render json: @playlist.songs
   end
 
   # POST /playlists
@@ -39,13 +44,14 @@ class PlaylistsController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_playlist
-      @playlist = Playlist.find(params[:id])
-    end
 
-    # Only allow a trusted parameter "white list" through.
-    def playlist_params
-      params.require(:playlist).permit(:title)
-    end
+  # Use callbacks to share common setup or constraints between actions.
+  def set_playlist
+    @playlist = Playlist.find(params[:id] ||= params[:playlist_id])
+  end
+
+  # Only allow a trusted parameter "white list" through.
+  def playlist_params
+    params.require(:playlist).permit(:title)
+  end
 end
