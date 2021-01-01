@@ -10,18 +10,31 @@
   align-items: center;
   justify-content: flex-start;
   padding: 15px 15px 15px 20px;
+
+  :active > & {
+    border-top: 1px solid $tileGrey;
+    border-bottom: 1px solid $tileGrey;
+  }
 }
 
 .icon {
   height: 30px;
   width: 30px;
-  stroke: $elementGreen;
-  fill: $elementGreen;
+  stroke: $elementGrey;
+  fill: $elementGrey;
+
+  :hover > & {
+    stroke: $bright;
+    fill: $bright;
+  }
 }
 
 .text {
   composes: base-font;
   margin-left: 10px;
   font-size: 14px;
-  //margin-bottom: 18px;
+
+  :hover > & {
+    color: $bright;
+  }
 }

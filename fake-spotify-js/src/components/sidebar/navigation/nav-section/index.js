@@ -7,14 +7,14 @@ const NavSection = ({ text, items, isBold}) => (
   <div className={styles.wrapper}>
     <div className={styles.text}>{text}</div>
     {items.map(item =>
-      <div className={isBold ? styles.itemTextBold : styles.itemText}>{item}</div>)
+      <div key={item} className={isBold ? styles.itemTextBold : styles.itemText}>{item}</div>)
     }
   </div>
 );
 
 NavItem.propTypes = {
   text: PropTypes.string.isRequired,
-  items: PropTypes.array.isRequired,
+  items: PropTypes.array,
   isBold: PropTypes.bool,
 }
 

@@ -1,0 +1,158 @@
+@import "src/styles/colours";
+@import "src/styles/sizes";
+@import "src/styles/typography";
+
+.modal {
+  display: flex;
+  flex-direction: column;
+  margin: auto;
+  height: auto;
+  width: auto;
+  border-radius: 6px;
+  background: $playerGrey;
+  box-shadow: 0 0 30px black;
+  outline: none;
+}
+
+.overlay {
+  display: flex;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: #00000099;
+  overflow: auto;
+  -webkit-overflow-scrolling: touch;
+  outline: none;
+  padding: 20px;
+}
+
+.wrapper {
+  padding: 20px;
+}
+
+.header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-bottom: 30px;
+}
+
+.title {
+  margin-top: 10px;
+  composes: base-font;
+  font-size: 18px;
+  color: $bright;
+  font-weight: bold;
+}
+
+.closeIcon {
+  width: 15px;
+  height: 15px;
+  stroke: $elementGrey;
+  fill: $elementGrey;
+
+  :hover > & {
+    stroke: $bright;
+    fill: $bright;
+  }
+}
+
+.body {
+  display: flex;
+  flex-direction: row;
+  margin: 10px 5px 20px;
+}
+
+.imageWrapper {
+  width: 210px;
+  height: 210px;
+  background-color: $gradientStart;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.icon {
+  width: 60px;
+  height: 60px;
+  stroke: $bright;
+  fill: $bright;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  margin-left: 20px;
+  justify-content: space-between;
+  max-height: 210px;
+}
+
+.fieldLabel {
+  composes: base-font;
+  font-size: 13px;
+  margin-bottom: 8px;
+  letter-spacing: 1px;
+  padding-left: 2px;
+}
+
+.imageText {
+  composes: fieldLabel;
+  margin-top: 20px;
+  font-weight: bold;
+}
+
+.textInput {
+  composes: base-font;
+  width: 350px;
+  margin-bottom: 15px;
+  font-size: 14px;
+  padding: 8px;
+  border-radius: 6px;
+  color: black;
+  outline: none;
+
+  &::placeholder {
+    color: $elementGrey;
+  }
+}
+
+.footer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 30px;
+}
+
+.createButton {
+  background-color: $elementGreen;
+  padding: 10px 30px;
+  composes: spaced;
+  color: $bright;
+  font-size: 10px;
+  font-weight: 600;
+  border-radius: 20px;
+  margin-bottom: 5px;
+
+  &:hover {
+    background-color: $elementGreenBright;
+    padding: 11px 33px;
+    font-size: 10.5px;
+  }
+}
+
+.textarea {
+  composes: base-font;
+  padding: 8px;
+  border-radius: 6px;
+  width: 350px;
+  font-size: 14px;
+  color: black;
+  outline: none;
+
+  &::placeholder {
+    color: $elementGrey;
+  }
+}

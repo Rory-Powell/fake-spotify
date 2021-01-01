@@ -26,8 +26,9 @@ const PlaylistBody = ({ songs }) => (
       <tbody>
       {
         songs && songs.map((song, index) => {
+          // TODO: Use correct key
           return (
-            <tr className={styles.tr}>
+            <tr className={styles.tr} key={index}>
               <td className={styles.td}>
                 {index + 1}
               </td>
