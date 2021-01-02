@@ -6,7 +6,8 @@ import Footer from "components/footer";
 import styles from './styles.module.scss'
 
 const Page = ({children, title, header}) => {
-  document.title = 'Fakeify . ' + title;
+  const titlePrefix = 'Fakeify';
+  document.title = title ? `${titlePrefix} . ${title}` : titlePrefix;
 
   return (
     <div className={styles.wrapper}>

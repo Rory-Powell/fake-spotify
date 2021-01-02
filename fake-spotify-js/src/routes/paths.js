@@ -1,4 +1,5 @@
 export const root = "/";
 export const library = "/library";
 export const home = "/home";
-export const playlist = "/playlist";
+export const album = (albumId) => `/albums/${albumId}`;
+export const playlist = (albumId) => `/playlists/${albumId}`;

@@ -3,6 +3,7 @@ import Navigation from "components/sidebar/navigation";
 import Artwork from "components/sidebar/artwork";
 import styles from "./styles.module.scss"
 import NewPlaylist from "components/sidebar/new-playlist";
+import { getPlaylists } from "api";
 
 const Sidebar = () => {
 
@@ -11,25 +12,19 @@ const Sidebar = () => {
 
   // effects
   useEffect(() => {
-    getPlaylists()
-  }, playlists)
+    loadPlaylists()
+  }, [])
 
   // utils
-  const getPlaylists = () => {
-    fetch('http://localhost:3001/playlists')
-      .then(response => response.json())
-      .then((data) => setPlayLists(data))
-  };
-
-  const changed = () => {
-    getPlaylists()
+  const loadPlaylists = () => {
+    getPlaylists(setPlayLists)
   }
 
   return (
     <div className={styles.wrapper}>
       <Navigation playlists={playlists}/>
       <div>
-        <NewPlaylist onPlaylistCreated={changed}/>
+        <NewPlaylist onPlaylistCreated={loadPlaylists}/>
         <Artwork/>
       </div>
     </div>

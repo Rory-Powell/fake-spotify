@@ -1,12 +1,35 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import Page from "pages/page";
-import Playlist from "components/playlist";
-import PlaylistHeader from "components/playlist/header";
+import Album from "components/collection/album";
+import { useParams } from "react-router";
+import { getPlaylist } from "api";
+import PlaylistHeader from "components/collection/playlist/header";
 
-const PagePlaylist = () => (
-  <Page title={'Playlist'} header={<PlaylistHeader/>}>
-    <Playlist/>
-  </Page>
-);
+const PagePlaylist = () => {
+
+  const {
+    id
+  } = useParams();
+
+  // state
+  const [playlist, setPlaylist] = useState({});
+
+  // effects
+  useEffect(() => {
+    loadPlaylist()
+  }, [])
+
+  // utils
+  const loadPlaylist = () => {
+    getPlaylist(id, setPlaylist)
+  }
+
+  return (
+    <Page title={playlist ? playlist.title : ''}
+          header={<PlaylistHeader playlist={playlist}/>}>
+      <Album/>
+    </Page>
+  );
+};
 
 export default PagePlaylist;

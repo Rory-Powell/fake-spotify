@@ -1,8 +1,4 @@
-import React from 'react';
-import styles from './syles.module.scss'
-import PlaylistBody from "components/playlist/body";
-
-const songs = [
+export const mockSongs = [
   {
     title: 'Second Hand News',
     length: '2:56',
@@ -59,11 +55,3 @@ const songs = [
     playCount: 54387221
   }
 ];
-
-const Playlist = () => (
-  <div className={styles.wrapper}>
-    <PlaylistBody songs={songs}/>
-  </div>
-);
-
-export default Playlist;

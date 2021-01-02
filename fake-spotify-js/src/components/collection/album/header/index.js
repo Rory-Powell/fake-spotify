@@ -1,16 +1,16 @@
 import React from 'react';
-import styles from './syles.module.scss'
+import styles from 'components/collection/album/header/syles.module.scss'
 import artwork from "images/artwork/artwork.png";
 import { ReactComponent as LikeIcon } from 'images/icons/like.svg';
 import { ReactComponent as MenuIcon } from 'images/icons/menu.svg';
 import Circle from "components/circle";
 
-const PlaylistHeader = () => (
+const AlbumHeader = ({ album }) => (
   <div className={styles.wrapper}>
     <img src={artwork} alt={"album art"} className={styles.artwork}/>
     <div className={styles.infoWrapper}>
       <div className={styles.typeText}>ALBUM</div>
-      <div className={styles.titleText}>Rumours</div>
+      <div className={styles.titleText}>{album.title}</div>
       <div className={styles.artistWrapper}>
         <div className={styles.subText}>By&nbsp;</div>
         <div className={styles.artistText}>Fleetwood Mac</div>
@@ -35,4 +35,4 @@ const PlaylistHeader = () => (
   </div>
 );
 
-export default PlaylistHeader;
+export default AlbumHeader;

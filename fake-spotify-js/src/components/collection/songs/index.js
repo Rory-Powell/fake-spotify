@@ -1,12 +1,12 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import styles from './syles.module.scss'
+import styles from 'components/collection/songs/syles.module.scss'
 import {ReactComponent as LikeIcon} from 'images/icons/like.svg';
 import {ReactComponent as MenuIcon} from 'images/icons/menu.svg';
 import {ReactComponent as ClockIcon} from 'images/icons/clock.svg';
 import {ReactComponent as ThumbIcon} from 'images/icons/thumb.svg';
 
-const PlaylistBody = ({ songs }) => (
+const Songs = ({ songs }) => (
   <div>
     <table className={styles.table}>
       <thead className={styles.thead}>
@@ -62,7 +62,7 @@ const PlaylistBody = ({ songs }) => (
   </div>
 );
 
-PlaylistBody.propTypes = {
+Songs.propTypes = {
   songs : PropTypes.arrayOf(
     PropTypes.shape({
       title: PropTypes.string.isRequired,
@@ -71,4 +71,4 @@ PlaylistBody.propTypes = {
   }))
 }
 
-export default PlaylistBody;
+export default Songs;

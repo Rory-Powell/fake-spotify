@@ -5,15 +5,26 @@
   display: flex;
   flex-direction: row;
   margin-bottom: 15px;
+  width: 100%;
 }
 
 .artwork {
   height: 200px;
   width: 200px;
-
 }
 
 .infoWrapper {
+
+}
+
+.main {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.content {
   margin-left: 20px;
   display: flex;
   flex-direction: column;
@@ -27,11 +38,11 @@
   align-items: center;
 }
 
-.artistWrapper {
+.metaWrapper {
   display: flex;
   flex-direction: row;
-  margin-bottom: 10px;
   margin-top: 15px;
+  min-width: 290px;
 }
 
 .typeText {
@@ -40,12 +51,23 @@
   color: $bright;
 }
 
+.followers {
+  composes: spaced;
+  font-size: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  text-align: right;
+  line-height: 1.5;
+}
+
 .titleText {
   composes: base-font;
   font-size: 40px;
   color: $bright;
   font-weight: bold;
   margin-top: 8px;
+  margin-bottom: 15px;
 }
 
 .subText {
@@ -53,7 +75,18 @@
   font-size: 13px;
 }
 
-.artistText {
+.description {
+  composes: subText;
+  line-height: 1.5;
+  overflow: hidden;
+  text-overflow: ellipsis;
+
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2; /* number of lines to show */
+}
+
+.userText {
   composes: subText;
   color: $bright;
 }
@@ -84,3 +117,9 @@
   width: 28px;
   margin-right: 15px;
 }
+
+.userText {
+  composes: subText;
+  color: $bright;
+}
+
