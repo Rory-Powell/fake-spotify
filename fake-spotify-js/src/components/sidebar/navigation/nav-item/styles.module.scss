@@ -12,6 +12,11 @@
   fill: $elementGrey;
   height: 22px;
   width: 22px;
+
+  :hover > & {
+    stroke: $bright;
+    fill: $bright;
+  }
 }
 
 .text {
@@ -19,4 +24,8 @@
   padding-left: 12px;
   font-size: 12px;
   font-weight: bold;
+
+  :hover > & {
+    color: $bright;
+  }
 }

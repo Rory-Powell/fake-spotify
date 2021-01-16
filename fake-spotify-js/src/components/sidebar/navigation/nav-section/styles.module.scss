@@ -1,4 +1,5 @@
 @import "src/styles/typography";
+@import "src/styles/colours";
 
 .wrapper {
   display: flex;
@@ -16,6 +17,11 @@
   composes: base-font;
   font-size: 12px;
   margin-bottom: 18px;
+  text-decoration: none;
+
+  &:hover {
+    color: $bright;
+  }
 }
 
 .itemTextBold {

@@ -8,6 +8,7 @@ import PageLibrary from "pages/library";
 import PageHome from "pages/home";
 import PageAlbum from "pages/album";
 import PagePlaylist from "pages/playlist";
+import { withRouter } from "react-router";
 
 const Routes = () => (
   <Switch>
@@ -16,22 +17,27 @@ const Routes = () => (
       to={paths.library}
     />
     <Route
+      exact
       path={paths.library}
       component={PageLibrary}
     />
     <Route
+      exact
       path={paths.home}
       component={PageHome}
     />
     <Route
+      exact
       path={paths.album(':id')}
       component={PageAlbum}
     />
     <Route
+      exact
       path={paths.playlist(':id')}
-      component={PagePlaylist}
+      component={withRouter(PagePlaylist)}
     />
     <Route
+      exact
       component={PageNotFound} />
   </Switch>
 );

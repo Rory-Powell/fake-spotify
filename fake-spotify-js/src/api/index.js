@@ -15,9 +15,14 @@ export const getPlaylists = (callback) => {
   doFetch('playlists', callback)
 };
 
-export const getPlaylist= (playlistId, callback) => {
+export const getPlaylist = (playlistId, callback) => {
   doFetch(`playlists/${playlistId}`, callback)
 };
+
+// TODO: Use /songs?playlistId=:id instead
+export const getPlaylistSongs = (playlistId, callback) => {
+  return doFetch(`playlists/${playlistId}/songs`, callback)
+}
 
 // ALBUMS
 

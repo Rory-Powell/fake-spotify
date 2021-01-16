@@ -1,9 +1,11 @@
+# frozen_string_literal: true
+
 class SongsController < ApplicationController
-  before_action :set_song, only: [:show, :update, :destroy]
+  before_action :set_song, only: %i[show update destroy]
 
   # GET /songs
   def index
-    @songs = Song.all
+    @songs = Song.includes(:artists)
 
     render json: @songs
   end

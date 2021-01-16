@@ -1,12 +1,34 @@
 import React from 'react';
 import styles from 'components/collection/album/syles.module.scss'
 import Songs from "components/collection/songs";
-import { mockSongs } from "components/collection/songs/mock-data";
+import {
+  ALBUM,
+  ARTIST,
+  DATE,
+  EXPLICIT,
+  LIKE,
+  MENU,
+  TIME,
+  TITLE
+} from "components/collection/songs/columns";
 
-const Playlist = () => (
-  <div className={styles.wrapper}>
-    <Songs songs={mockSongs}/>
-  </div>
-);
+const columns = [
+  LIKE,
+  TITLE,
+  EXPLICIT,
+  ARTIST,
+  ALBUM,
+  DATE,
+  MENU,
+  TIME
+]
+
+const Playlist = ({songs}) => {
+  return (
+    <div className={styles.wrapper}>
+      <Songs songs={songs} columns={columns}/>
+    </div>
+  );
+};
 
 export default Playlist;

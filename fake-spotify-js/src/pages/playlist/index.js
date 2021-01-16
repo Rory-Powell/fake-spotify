@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from 'react';
 import Page from "pages/page";
-import Album from "components/collection/album";
 import { useParams } from "react-router";
-import { getPlaylist } from "api";
+import { getPlaylist, getPlaylistSongs } from "api";
 import PlaylistHeader from "components/collection/playlist/header";
+import Playlist from "components/collection/playlist";
 
 const PagePlaylist = () => {
 
@@ -13,21 +13,30 @@ const PagePlaylist = () => {
 
   // state
   const [playlist, setPlaylist] = useState({});
+  const [songs, setSongs] = useState([])
 
   // effects
   useEffect(() => {
     loadPlaylist()
-  }, [])
+  }, [id])
+
+  useEffect(() => {
+    loadSongs()
+  }, [id])
 
   // utils
   const loadPlaylist = () => {
     getPlaylist(id, setPlaylist)
   }
 
+  const loadSongs = () => {
+    getPlaylistSongs(id, setSongs)
+  }
+
   return (
     <Page title={playlist ? playlist.title : ''}
           header={<PlaylistHeader playlist={playlist}/>}>
-      <Album/>
+      <Playlist songs={songs}/>
     </Page>
   );
 };

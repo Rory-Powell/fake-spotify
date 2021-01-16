@@ -8,5 +8,12 @@ class Song < ApplicationRecord
   has_many :playlists, through: :playlist_songs
 
   has_many :artist_songs, dependent: :destroy
-  has_many :songs, through: :artist_songs
+  has_many :artists, through: :artist_songs
+
+  def as_json(options = {})
+    super(options).merge(
+      'artists' => artists.map(&:name).flatten,
+      'albums' => albums.map(&:title).flatten
+    )
+  end
 end

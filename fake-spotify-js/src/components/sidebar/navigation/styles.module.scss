@@ -1,7 +1,10 @@
+@import "src/styles/sizes";
+
 .wrapper {
   padding: 30px 26px 0;
   display: flex;
   flex-direction: column;
+  height: $navHeight;
 }
 
 .navItem {
@@ -9,6 +12,5 @@
 }
 
 .scrollableContent {
-  height: 30vh;
-  overflow: scroll
+  overflow: scroll;
 }

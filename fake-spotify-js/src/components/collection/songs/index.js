@@ -5,62 +5,152 @@ import {ReactComponent as LikeIcon} from 'images/icons/like.svg';
 import {ReactComponent as MenuIcon} from 'images/icons/menu.svg';
 import {ReactComponent as ClockIcon} from 'images/icons/clock.svg';
 import {ReactComponent as ThumbIcon} from 'images/icons/thumb.svg';
+import {ReactComponent as CalendarIcon} from 'images/icons/calendar.svg';
+import {
+  ALBUM,
+  ARTIST,
+  DATE,
+  EXPLICIT,
+  LIKE,
+  MENU,
+  NUMBER,
+  POPULARITY,
+  TIME,
+  TITLE
+} from "components/collection/songs/columns";
 
-const Songs = ({ songs }) => (
-  <div>
-    <table className={styles.table}>
-      <thead className={styles.thead}>
-        <tr className={styles.tr}>
-          <th className={styles.th}>#</th>
-          <th className={styles.th}/>
-          <th className={styles.th}>TITLE</th>
-          <th className={styles.th}/>
+const renderColumnHeaders = (columns) => {
+  return columns.map(column => {
+    switch(column) {
+      case NUMBER:
+        return <th className={styles.th}>#</th>
+      case LIKE:
+        return <th className={styles.th}/>
+      case EXPLICIT:
+        return <th className={styles.th}/>
+      case TITLE:
+        return <th className={styles.th}>TITLE</th>
+      case ARTIST:
+        return <th className={styles.th}>ARTIST</th>
+      case ALBUM:
+        return <th className={styles.th}>ALBUM</th>
+      case MENU:
+        return (
+          <td className={styles.td}>
+            <CalendarIcon className={styles.icon}/>
+          </td>
+        )
+      case DATE:
+        return (
+          <td className={styles.td}>
+            <CalendarIcon className={styles.icon}/>
+          </td>
+        )
+      case TIME:
+        return (
           <th className={styles.th}>
             <ClockIcon className={styles.icon}/>
           </th>
+        )
+      case POPULARITY:
+        return (
           <th className={styles.th}>
             <ThumbIcon className={styles.icon}/>
           </th>
-        </tr>
-      </thead>
-      <tbody>
-      {
-        songs && songs.map((song, index) => {
-          // TODO: Use correct key
-          return (
-            <tr className={styles.tr} key={index}>
-              <td className={styles.td}>
-                {index + 1}
-              </td>
-
-              <td className={styles.td}>
-                <LikeIcon className={styles.icon}/>
-              </td>
-
-              <td className={styles.td}>
-                {song.title}
-              </td>
-
-              <td className={styles.td}>
-                <MenuIcon className={styles.icon}/>
-              </td>
-
-              <td className={styles.td}>
-                {song.length}
-              </td>
-
-              <td className={styles.td}>
-                {song.playCount}
-              </td>
-            </tr>
-            )
-          }
         )
-      }
-      </tbody>
-    </table>
-  </div>
-);
+    }
+  })
+}
+
+const renderSongColumn = (song, columns, index) => {
+  return columns.map((column) => {
+    switch(column) {
+      case NUMBER:
+        return (
+          <td className={styles.td}>
+            {index + 1}
+          </td>
+        )
+      case LIKE:
+        return (
+          <td className={styles.td}>
+            <LikeIcon className={styles.icon}/>
+          </td>
+        )
+      case EXPLICIT:
+        return <td className={styles.td}/> // TODO
+      case TITLE:
+        return (
+          <td className={styles.td}>
+            {song.title}
+          </td>
+        )
+      case ARTIST:
+        return (
+          <td className={styles.td}>
+            {song.artists.join(', ')}
+          </td>
+        )
+      case ALBUM:
+        return (
+          <td className={styles.td}>
+            {song.albums.join(', ')}
+          </td>
+        )
+      case MENU:
+        return (
+          <td className={styles.td}>
+            <MenuIcon className={styles.icon}/>
+          </td>
+        )
+      case DATE:
+        return (
+          <td className={styles.td}>
+            {song.created_at.split('T')[0]}
+          </td>
+        )
+      case TIME:
+        return (
+          <td className={styles.td}>
+            {song.duration}
+          </td>
+        )
+      case POPULARITY:
+        return (
+          <td className={styles.td}>
+            {song.play_count}
+          </td>
+        )
+    }
+  })
+}
+
+const renderColumns = (columns, songs) => {
+  return songs.map((song, index) => {
+    return (
+      <tr className={styles.tr} key={song.id}>
+        {renderSongColumn(song, columns, index)}
+      </tr>
+    )
+  })
+}
+
+const Songs = ({ songs, columns }) => {
+  return (
+    <div>
+      <table className={styles.table}>
+        <thead className={styles.thead}>
+        <tr className={styles.tr}>
+          {renderColumnHeaders(columns)}
+        </tr>
+        </thead>
+        <tbody>
+          {renderColumns(columns, songs)}
+        </tbody>
+      </table>
+    </div>
+  );
+};
 
 Songs.propTypes = {
   songs : PropTypes.arrayOf(

@@ -1,7 +1,10 @@
 @import "src/styles/colours";
+@import "src/styles/sizes";
 
 .wrapper {
-  height: 80px;
+  height: $footerHeight;
+  max-height: $footerHeight;
+  min-height: $footerHeight;
   background-color: $playerGrey;
   display: flex;
   flex-direction: row;

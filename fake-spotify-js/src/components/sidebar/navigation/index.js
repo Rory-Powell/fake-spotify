@@ -16,19 +16,24 @@ const Navigation = ({playlists}) => {
       <NavItem Icon={RadioIcon} text={"Radio"}/>
 
       <div className={styles.scrollableContent}>
-        <NavSection text={"YOUR LIBRARY"}
-                    items={[
-                      "Made For You",
-                      "Albums",
-                      "Artists"
-                    ]}
-                    isBold={true}/>
+        <NavSection
+          text={"YOUR LIBRARY"}
+          items={[
+            "Made For You",
+            "Albums",
+            "Artists"
+          ]}
+          nameFunction={(p) => p}
+          isBold={true}
+          linkTo={() => '/library'}
+        />
         <NavSection
           text={"PLAYLISTS"}
-          items={playlists.map(p => p.title )}
+          items={playlists}
+          nameFunction={(p) => p.title}
+          linkTo={(id) => `/playlists/${id}`}
         />
       </div>
-
     </div>
   );
 }
