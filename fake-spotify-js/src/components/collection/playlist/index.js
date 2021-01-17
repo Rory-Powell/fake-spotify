@@ -1,21 +1,21 @@
 import React from 'react';
 import styles from 'components/collection/album/syles.module.scss'
-import Songs from "components/collection/songs";
+import Songs, { TYPE_PLAYLIST } from "components/collection/songs";
 import {
   ALBUM,
   ARTIST,
   DATE,
-  EXPLICIT,
   LIKE,
   MENU,
+  NUMBER,
   TIME,
   TITLE
 } from "components/collection/songs/columns";
 
 const columns = [
+  NUMBER,
   LIKE,
   TITLE,
-  EXPLICIT,
   ARTIST,
   ALBUM,
   DATE,
@@ -26,7 +26,7 @@ const columns = [
 const Playlist = ({songs}) => {
   return (
     <div className={styles.wrapper}>
-      <Songs songs={songs} columns={columns}/>
+      <Songs songs={songs} columns={columns} type={TYPE_PLAYLIST}/>
     </div>
   );
 };

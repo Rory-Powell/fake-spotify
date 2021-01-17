@@ -1,6 +1,5 @@
 export const NUMBER = 'number'
 export const LIKE = 'like'
-export const EXPLICIT = 'explicit'
 export const TITLE = 'title'
 export const ARTIST = 'artist'
 export const ALBUM = 'album'

@@ -1,5 +1,5 @@
 $navWidth: 245px;
 $footerHeight: 80px;
 $newPlaylistHeight: 65px;
-$sidebarHeight: calc(100vh - #{$footerHeight});
+$mainHeight: calc(100vh - #{$footerHeight});
 $navHeight: calc(100vh - #{$footerHeight} - #{$newPlaylistHeight} - #{$navWidth} - 30px)

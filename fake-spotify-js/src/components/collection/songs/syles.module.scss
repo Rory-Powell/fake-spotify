@@ -17,19 +17,48 @@
 }
 
 .td {
-  height: 22px;
-  padding: 10px;
-  vertical-align: middle;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.menu {
+  composes: td;
+  visibility: hidden;
+  :hover > & {
+    visibility: visible;
+  }
 }
 
 .th {
   composes: td;
-  height: 18px;
+  align-items: flex-end;
+  margin-bottom: 10px;
 }
 
-.tr {
+.row {
   border-bottom: 1px solid $playerGrey;
-  vertical-align: top;
+  display: grid;
+  gap: 10px;
+  min-height: 40px;
+  max-height: 40px;
+  padding-left: 20px;
+}
+
+.songRow {
+  &:hover {
+    background-color: $playerGrey;
+  }
+}
+
+.playlistRow {
+  composes: row;
+  grid-template-columns: [index] 30px [like] 30px [title] 2fr [artist] 2fr [album] 2fr [date] 100px [menu] 70px [time] 40px
+}
+
+.albumRow {
+  composes: row;
+  grid-template-columns: [index] 30px [like] 30px [title] 4fr [menu] 70px [time] 40px [popularity] 40px
 }
 
 .thead {
