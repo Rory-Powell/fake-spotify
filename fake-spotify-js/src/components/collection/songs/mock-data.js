@@ -1,57 +1,57 @@
 export const mockSongs = [
   {
     title: 'Second Hand News',
-    length: '2:56',
-    playCount: 54387221
+    duration: '2:56',
+    play_count: 123
   },
   {
     title: 'Dreams',
-    length: '4:18',
-    playCount: 54387221
+    duration: '4:18',
+    play_count: 123
   },
   {
     title: 'Never Going Back Again',
-    length: '2:14',
-    playCount: 54387221
+    duration: '2:14',
+    play_count: 123
   },
   {
     title: 'Don\'t Stop',
-    length: '3:13',
-    playCount: 54387221
+    duration: '3:13',
+    play_count: 123
   },
   {
     title: 'Go Your Own Way',
-    length: '3:44',
-    playCount: 54387221
+    duration: '3:44',
+    play_count: 123
   },
   {
     title: 'Songbird',
-    length: '3:21',
-    playCount: 54387221
+    duration: '3:21',
+    play_count: 123
   },
   {
     title: 'The Chain',
-    length: '4:30',
-    playCount: 54387221
+    duration: '4:30',
+    play_count: 123
   },
   {
     title: 'You Make Loving Fun',
-    length: '3:34',
-    playCount: 54387221
+    duration: '3:34',
+    play_count: 123
   },
   {
     title: 'I Don\'t Want To Know',
-    length: '3:17',
-    playCount: 54387221
+    duration: '3:17',
+    play_count: 123
   },
   {
     title: 'Oh Daddy',
-    length: '3:56',
-    playCount: 54387221
+    duration: '3:56',
+    play_count: 123
   },
   {
     title: 'Gold Dust Woman',
-    length: '4:56',
-    playCount: 54387221
+    duration: '4:56',
+    play_count: 123
   }
 ];
