@@ -4,4 +4,4 @@ A spotify clone created for the purposes of learning more about js/react/css/rub
 
 ## Looks Like
 
-![screenshot](docs/screenshot.png)
+![screenshot](docs/demo.gif)
